@@ -9,6 +9,6 @@ RUN mvn clean package -DskipTests
 # ---------- Run stage ----------
 FROM eclipse-temurin:21-jdk
 WORKDIR /app
-COPY --from=build /app/target/*.jar book-0.0.1-SNAPSHOT.jar
+COPY --from=build /app/target/*.jar bookservice-0.0.1-SNAPSHOT.jar
 EXPOSE 10000
-ENTRYPOINT ["java","-jar","book-0.0.1-SNAPSHOT.jar"]
+ENTRYPOINT ["java","-jar","bookservice-0.0.1-SNAPSHOT.jar"]
